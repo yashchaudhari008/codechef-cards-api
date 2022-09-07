@@ -10,7 +10,7 @@ public class CodechefUser {
 	private Long countryRank;
 	private Long problemFullySolved;
 	private Long problemPartiallySolved;
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -50,7 +50,7 @@ public class CodechefUser {
 	public void setStars(Integer stars) {
 		this.stars = stars;
 	}
-	
+
 	public Long getGlobalRank() {
 		return globalRank;
 	}
@@ -83,11 +83,12 @@ public class CodechefUser {
 		this.problemPartiallySolved = problemPartiallySolved;
 	}
 
-	public CodechefUser() {}
+	public CodechefUser() {
+	}
 
 	public CodechefUser(String username) {
 		super();
 		this.username = username;
 	}
-	
+
 }
