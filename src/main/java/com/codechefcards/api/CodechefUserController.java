@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -45,6 +46,7 @@ public class CodechefUserController {
 		return "REST API Running";
 	}
 
+	@CrossOrigin
 	@GetMapping("/{data}")
 	public APIResponse output(@PathVariable(required = true, name = "data") String username) {
 		String CONNECTION_URL = String.format("https://www.codechef.com/users/%s", username);
