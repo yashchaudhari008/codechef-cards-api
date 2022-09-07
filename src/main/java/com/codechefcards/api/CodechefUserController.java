@@ -3,6 +3,7 @@ package com.codechefcards.api;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.HashMap;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
@@ -11,8 +12,41 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 public class CodechefUserController {
+
+	private class APIResponse {
+		CodechefUser data;
+		String status;
+
+		public CodechefUser getData() {
+			return data;
+		}
+
+		public void setData(CodechefUser data) {
+			this.data = data;
+		}
+
+		public String getStatus() {
+			return status;
+		}
+
+		public void setStatus(String status) {
+			this.status = status;
+		}
+
+		public APIResponse(CodechefUser data, String status) {
+			this.data = data;
+			this.status = status;
+		}
+
+	}
+
+	@GetMapping("/")
+	public String defaultOutput() {
+		return "REST API Running";
+	}
+
 	@GetMapping("/{data}")
-	public List<Object> output(@PathVariable(required = true, name = "data") String username) {
+	public APIResponse output(@PathVariable(required = true, name = "data") String username) {
 		String CONNECTION_URL = String.format("https://www.codechef.com/users/%s", username);
 		CodechefUser user = new CodechefUser(username);
 		try {
@@ -49,6 +83,8 @@ public class CodechefUserController {
 			// STARS
 			user.setStars(
 					doc.getElementsByClass("rating-star")
+							.first()
+							.getElementsByTag("span")
 							.size());
 
 			// GLOBAL RANK
@@ -86,9 +122,9 @@ public class CodechefUserController {
 							.replaceAll("[^0-9]", ""));
 
 		} catch (Exception e) {
-			return List.of(e.toString());
+			return new APIResponse(null, "error");
 		}
-		return List.of(user);
+		return new APIResponse(user, "success");
 	}
 
 }
