@@ -51,6 +51,40 @@ public class CodechefUserController {
 					doc.getElementsByClass("rating-star")
 							.size());
 
+			// GLOBAL RANK
+			user.setGlobalRank(
+					doc.getElementsByClass("rating-ranks")
+							.first()
+							.getElementsByTag("a")
+							.first()
+							.text());
+
+			// COUNTRY RANK
+			user.setCountryRank(
+					doc.getElementsByClass("rating-ranks")
+							.first()
+							.getElementsByTag("a")
+							.last()
+							.text());
+
+			// PROBLEM FULLY SOLVED
+			user.setProblemFullySolved(
+					doc.getElementsByClass("problems-solved")
+							.first()
+							.getElementsByTag("h5")
+							.first()
+							.ownText()
+							.replaceAll("[^0-9]", ""));
+
+			// PROBLEM PARTIALLY SOLVED
+			user.setProblemPartiallySolved(
+					doc.getElementsByClass("problems-solved")
+							.first()
+							.getElementsByTag("h5")
+							.get(1)
+							.ownText()
+							.replaceAll("[^0-9]", ""));
+
 		} catch (Exception e) {
 			return List.of(e.toString());
 		}
