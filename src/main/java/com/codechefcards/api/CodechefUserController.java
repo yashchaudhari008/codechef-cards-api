@@ -131,6 +131,15 @@ public class CodechefUserController {
 									.first()
 									.ownText()));
 
+			// COUNTRY
+			user.setCountry(
+					userDetailsContainer
+							.getElementsByClass("user-details")
+							.first()
+							.getElementsByClass("user-country-name")
+							.first()
+							.ownText());
+
 		} catch (Exception e) {
 			return new APIResponse(null, "error");
 		}
