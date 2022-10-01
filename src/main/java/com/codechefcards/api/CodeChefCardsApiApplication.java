@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CodechefCardsApiApplication {
+public class CodeChefCardsApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CodechefCardsApiApplication.class, args);
+		SpringApplication.run(CodeChefCardsApiApplication.class, args);
 	}
 
 }
