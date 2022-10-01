@@ -12,6 +12,7 @@ public class CodechefUser {
 	private Long problemFullySolved;
 	private Long problemPartiallySolved;
 	private Integer contestParticipated;
+	private String country;
 
 	public String getUsername() {
 		return username;
@@ -118,6 +119,14 @@ public class CodechefUser {
 
 	public void setContestParticipated(Integer contestParticipated) {
 		this.contestParticipated = contestParticipated;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	public CodechefUser() {
