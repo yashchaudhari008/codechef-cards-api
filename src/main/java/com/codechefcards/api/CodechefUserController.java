@@ -123,6 +123,14 @@ public class CodechefUserController {
 							.ownText()
 							.replaceAll("[^0-9]", ""));
 
+			user.setContestParticipated(
+					Integer.valueOf(
+							doc.getElementsByClass("contest-participated-count")
+									.first()
+									.getElementsByTag("b")
+									.first()
+									.ownText()));
+
 		} catch (Exception e) {
 			return new APIResponse(null, "error");
 		}
