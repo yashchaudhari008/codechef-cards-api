@@ -1,6 +1,5 @@
 package com.codechefcards.api.model;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.*;
 
 @NoArgsConstructor

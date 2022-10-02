@@ -15,11 +15,11 @@ public class CodeChefApiService {
     public CodeChefUser getDetails(String userName) throws JsonProcessingException {
         String CONNECTION_URL = String.format("https://www.codechef.com/users/%s", userName);
         CodeChefUser user = new CodeChefUser();
+        user.setUsername(null);
         ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
         try {
             Document doc = Jsoup.connect(CONNECTION_URL).get();
             Element userDetailsContainer = doc.getElementsByClass("user-details-container").first();
-
             // NAME
             user.setName(
                     userDetailsContainer
@@ -106,6 +106,7 @@ public class CodeChefApiService {
         } catch (Exception e) {
             return null;
         }
+        user.setUsername(userName);
         return user;
     }
 }
