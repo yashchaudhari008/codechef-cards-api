@@ -1,6 +1,5 @@
 # Codechef Cards API
 
-![Heroku](https://heroku-badge.herokuapp.com/?app=codechef-cards-api)
 ![GitHub repo size](https://img.shields.io/github/repo-size/yashchaudhari008/Codechef_Cards)
 ![GitHub](https://img.shields.io/github/license/yashchaudhari008/Codechef_Cards)
 
@@ -29,7 +28,9 @@ A REST API to get [codechef](https://www.codechef.com/) user details. Made using
             "globalRank": {Long || null},
             "countryRank": {Long || null},
             "problemFullySolved": {Long},
-            "problemPartiallySolved": {Long}
+            "problemPartiallySolved": {Long},
+            "contestParticipated": {Integer},
+            "country": {String}
         },
         "status": "success"
     }
