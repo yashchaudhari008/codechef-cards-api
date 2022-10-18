@@ -1,6 +1,5 @@
 # Codechef Cards API
 
-
 ![GitHub repo size](https://img.shields.io/github/repo-size/yashchaudhari008/Codechef_Cards)
 ![GitHub](https://img.shields.io/github/license/yashchaudhari008/Codechef_Cards)
 
