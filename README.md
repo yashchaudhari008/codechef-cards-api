@@ -9,11 +9,11 @@ A REST API to get [codechef](https://www.codechef.com/) user details. Made using
 
 ## 📩 Request Format
 
-    https://codechef-cards-api.herokuapp.com/{username}
+    https://codechef-cards-api.onrender.com/{username}
 
 ## 📝 Example URL
 
-    https://codechef-cards-api.herokuapp.com/mad_008
+    https://codechef-cards-api.onrender.com/mad_008
 
 ## ✉️ Response Format
 
